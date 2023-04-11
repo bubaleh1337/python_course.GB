@@ -12,7 +12,7 @@
 num = int(input('Введите шестизначный номер, чтобы проверить его на счастье: '))
 value1 = num // 1000
 value2 = num % 1000
-sum1 = 0; sum2 = 0
+sum1 = sum2 = 0
 while value1 > 0:
     sum1 += value1 % 10
     value1 //= 10
