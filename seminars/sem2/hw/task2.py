@@ -10,21 +10,9 @@ sum = int(input('Введите сумму двух чисел: '))  # 60
 multiply = int(input('Введите произведение двух чисел: '))  # 500
 num_x = 0
 num_y = 0
-sum = num_x + num_y
-multiply = num_x * num_y
 
-while num_x <= 1000 and num_y <= 1000:
-    num_x += 1
-    num_y += 1
-    print(num_x, num_y)
-    if sum == num_x * num_y and multiply == num_x * num_y:
-        print(
-            f'Сумма загаданных чисел: {sum}, произведение: {multiply}, загаданные числа {num_x} и {num_y}')
+for i in range(sum):
+    num_x, num_y = sum - i, sum - num_x
+    if sum == num_x + num_y and multiply == num_x * num_y:
+        print(f'Загаданные числа {num_x} и {num_y}')
         break
-
-"""            
-if num_x <= 1000 and num_y <= 1000:
-    print(f'Сумма загаданных чисел: {sum}, произведение: {multiply}, загаданные числа {num_x} и {num_y}')
-else:
-    print('Пожалуйста, задумайте число не больше 1000.')
-"""
