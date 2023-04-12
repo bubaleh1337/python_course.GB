@@ -8,8 +8,7 @@
 
 sum = int(input('Введите сумму двух чисел: '))  # 60
 multiply = int(input('Введите произведение двух чисел: '))  # 500
-num_x = 0
-num_y = 0
+num_x = num_y = 0
 
 for i in range(sum):
     num_x, num_y = sum - i, sum - num_x
