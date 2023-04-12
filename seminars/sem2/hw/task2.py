@@ -6,19 +6,21 @@
 Помогите Кате отгадать задуманные Петей числа.
 """
 
-sum = int(input('Введите сумму двух чисел: ')) # 60
-multiply = int(input('Введите произведение двух чисел: ')) # 500
+sum = int(input('Введите сумму двух чисел: '))  # 60
+multiply = int(input('Введите произведение двух чисел: '))  # 500
 num_x = 0
 num_y = 0
 sum = num_x + num_y
 multiply = num_x * num_y
 
-while True:
+while num_x <= 1000 and num_y <= 1000:
     num_x += 1
     num_y += 1
-    if num_x <= 1000 and num_y <= 1000:
-        if sum == num_x * num_y and multiply == num_x * num_y:
-          print(f'Сумма загаданных чисел: {sum}, произведение: {multiply}, загаданные числа {num_x} и {num_y}')
+    print(num_x, num_y)
+    if sum == num_x * num_y and multiply == num_x * num_y:
+        print(
+            f'Сумма загаданных чисел: {sum}, произведение: {multiply}, загаданные числа {num_x} и {num_y}')
+        break
 
 """            
 if num_x <= 1000 and num_y <= 1000:
