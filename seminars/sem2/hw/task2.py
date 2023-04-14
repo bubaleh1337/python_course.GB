@@ -9,7 +9,9 @@
 sum = int(input('Введите сумму двух чисел: '))  # 60
 multiply = int(input('Введите произведение двух чисел: '))  # 500
 num_x = num_y = 0
-
+i = 0
+#while sum != i * multiply:
+    
 for i in range(sum):
     num_x, num_y = sum - i, sum - num_x
     if sum == num_x + num_y and multiply == num_x * num_y:
