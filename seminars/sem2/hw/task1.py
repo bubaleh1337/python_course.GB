@@ -11,17 +11,14 @@ reshka = orel = 0
 
 for i in range(coin):
     side_coin = random.randint(0, 1)
-    print(side_coin)
+    print(side_coin, end=" ")
     if side_coin == 0:
         reshka += 1
     else:
         orel += 1
 if reshka == 0 or orel == 0:
-    print(f'Монет: {coin}, решка: {reshka}, орел: {orel}. Переворачивать нечего.')
+    print(f'\nМонет: {coin}, решка: {reshka}, орел: {orel}. Переворачивать нечего.')
 elif reshka < orel:
-    print(f'Монет: {coin}, решка: {reshka}, орел: {orel}. Перевернём наименьшее количество решек: {reshka}')
-elif reshka > orel:
-    print(f'Монет: {coin}, решка: {reshka}, орел: {orel}. Перевернём наименьшее количество орлов: {orel}')
-
+    print(f'\nМонет: {coin}, решка: {reshka}, орел: {orel}. Перевернём наименьшее количество решек: {reshka}')
 else:
-    print('Введите натуральное число.')
+    print(f'\nМонет: {coin}, решка: {reshka}, орел: {orel}. Перевернём наименьшее количество орлов: {orel}')
