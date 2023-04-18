@@ -12,12 +12,16 @@
 from random import randint
 
 size = int(input('Введите размер списка: '))
-lst = [randint(-10, 10) for i in range(size)]
+lst = [randint(-10, 10) for _ in range(size)]
 print(lst)
+
 num = int(input('Введите число, которое хотите найти: ')) # вывожу запрос в новой строке, т.к. пользователю нужно видеть распечатанный список
+
 count = 0
+closest = lst[0]
 
-for i in range(len(lst)):
-    if lst[i] == num: count += 1
+for i in lst:
+    if i == num: count += 1
+    if abs(num - i) < abs(num - closest): closest = i
 
-print(f'{count}')
+print(f'Такого числа нет, но есть ближнее к нему: {closest}.' if count == 0 else f'Число встречается {count} раз.')
