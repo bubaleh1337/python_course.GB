@@ -10,3 +10,18 @@
     -> 7
 """
 
+from random import randint
+
+size = int(input('Введите размер списка: '))
+lst = [randint(-10, 10) for _ in range(size)]
+print(lst)
+
+num = int(input('Введите число, которое хотите найти: '))
+
+closest = lst[0]
+
+for i in lst:
+    if abs(num - i) < abs(num - closest): closest = i
+
+print(f'Близкое число к {num}: {closest}.')
+
