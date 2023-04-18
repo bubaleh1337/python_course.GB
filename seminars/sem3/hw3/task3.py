@@ -34,6 +34,6 @@ count = 0
 for letter in word.upper():
     for letters in game.keys():
         if letter in letters:
-            count += game.get(letters)
+            count += game.get(letters, 0)
             
 print(f'Ценность слова "{word}" - {count}')
