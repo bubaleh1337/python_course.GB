@@ -32,7 +32,7 @@ word = input('Введите слово, чтобы определить его 
 count = 0
 
 for letter in word.upper():
-    for letters in game.keys():
+    for letters in game:
         if letter in letters:
             count += game.get(letters, 0)
             
