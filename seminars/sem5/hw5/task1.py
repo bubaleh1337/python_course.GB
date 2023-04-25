@@ -7,8 +7,8 @@ A = 2; B = 3 -> 8
 """
 
 def Stepen(a, b):
-    if b == 0:
-        return 1
-    return a * Stepen(a, b - 1)
+  if b == 0:
+    return 1
+  return a * Stepen(a, b - 1)
 
 print(Stepen(int(input('Введите первое число: ')), int(input('Введите второе число: '))))
