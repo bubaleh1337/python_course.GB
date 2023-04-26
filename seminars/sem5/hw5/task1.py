@@ -6,9 +6,9 @@ A = 3; B = 5 -> 243 (3⁵)
 A = 2; B = 3 -> 8 
 """
 
-def Stepen(a, b):
+def stepen(a, b):
   if b == 0:
     return 1
-  return a * Stepen(a, b - 1)
+  return a * stepen(a, b - 1)
 
-print(Stepen(int(input('Введите первое число: ')), int(input('Введите второе число: '))))
+print(stepen(int(input('Введите первое число: ')), int(input('Введите второе число: '))))

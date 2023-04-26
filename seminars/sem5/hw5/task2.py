@@ -7,10 +7,10 @@
     4 
 """
 
-def Sum(a, b):
+def sum(a, b):
   
   if b <= 0:
     return a
-  return Sum(a + 1, b - 1) 
+  return sum(a + 1, b - 1) 
   
-print(Sum(int(input('Введите первое число: ')), int(input('Введите второе число: '))))
+print(sum(int(input('Введите первое число: ')), int(input('Введите второе число: '))))
