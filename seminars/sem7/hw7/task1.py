@@ -19,8 +19,8 @@
 def countGlas(word, glas):
     return sum(map(lambda letter: word.count(letter), glas))
 
-def rhythm(vinni_text, glas) -> bool:
-    return len(set(map(lambda word: countGlas(word, glas), vinni_text))) <2
+def rhythm(text, glas) -> bool:
+    return len(set(map(lambda word: countGlas(word, glas), text))) < 2
 
 glas = "АЕЁИОУЫЭЮЯ"
 vinni_text = input("Введите стихотворение Винни-Пуха: ").upper().split()
