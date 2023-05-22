@@ -16,15 +16,13 @@
 Вывод: Парам пам-пам  
 """
 
-def countGlas(word, glas):
-    return sum(map(lambda letter: word.count(letter), glas))
+def countLetters(word, letters):
+    return sum(map(lambda letter: word.count(letter), letters))
 
-def rhythm(text, glas) -> bool:
-    return len(set(map(lambda word: countGlas(word, glas), text))) < 2
+def rhythm(text, letters) -> bool:
+    return len(set(map(lambda word: countLetters(word, letters), text))) < 2
 
-glas = "АЕЁИОУЫЭЮЯ"
+letters = "АЕЁИОУЫЭЮЯ"
 vinni_text = input("Введите стихотворение Винни-Пуха: ").upper().split()
-if rhythm(vinni_text, glas):
-  print("Парам пам-пам")
-else:
-  print("Пам парам")
+
+print("Парам пам-пам" if rhythm(vinni_text, letters) else "Пам парам")
