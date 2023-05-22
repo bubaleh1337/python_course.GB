@@ -16,10 +16,15 @@
 Вывод: Парам пам-пам  
 """
 
-dict_letters = {'glas': 'АЕЁИОУЫЭЮЯ', 'sogl': 'БВГДЖЗЙКЛМНПРСТФХЦЧШЩЪЬ'}
+def countGlas(word, glas):
+    return map(lambda letter: word.count(letter), glas)
 
-text = list(input('Винни-Пух, введите стихотворение: ').split())
+def rhythm(vinni_text, glas) -> bool:
+    return len(set(map(lambda x: countGlas(x, glas), vinni_text))) <2
 
-print(text)
-
-text.
+glas = "АЕЁИОУЫЭЮЯ"
+vinni_text = input("Введите стихотворение Винни-Пуха: ").upper().split()
+if rhythm(vinni_text, glas):
+  print("Парам пам-пам")
+else:
+  print("Пам парам")
