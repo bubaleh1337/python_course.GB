@@ -17,7 +17,7 @@
 """
 
 def countGlas(word, glas):
-    return map(lambda letter: word.count(letter), glas)
+    return sum(map(lambda letter: word.count(letter), glas))
 
 def rhythm(vinni_text, glas) -> bool:
     return len(set(map(lambda x: countGlas(x, glas), vinni_text))) <2
