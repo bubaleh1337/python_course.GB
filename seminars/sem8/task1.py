@@ -8,14 +8,14 @@
 (Например имя или фамилию человека)
 4. Использование функций. Ваша программа не должна быть линейной
 
-1. Открыть файл
-2. Сохранить файл
-3. Показать тк
-4. Добавить контакт
-5. Найти контакт
-6. Изменить контакт
+1. Открыть файл (есть)
+2. Сохранить файл (есть)
+3. Показать тк (есть)
+
+5. Найти контакт (есть)
+6. Изменить контакт (есть)
 7. Удалить контакт
-8. Выход из программы
+8. Выход из программы (есть)
 """
 import json
 import os
@@ -51,14 +51,14 @@ def readContact():
 
 def changeContact():
     print(data)
-    x = int(input('Какой id контакта поменять? '))
-    print(data[x])
+    id_contact = int(input('Какой id контакта поменять? '))
+    print(data[id_contact])
     name = input('Введите имя: ')
     phone = input('Введите номер телефона: ')
     if len(name) > 0:
-        data[x]['name'] = name
+        data[id_contact]['name'] = name
     if len(phone) > 0:
-        data[x]['phone'] = phone
+        data[id_contact]['phone'] = phone
 
 def findContact():
     command = int(input('Меню: \n1. Искать по id \n2. Искать по имени \n3. Искать по телефону \n:'))
@@ -76,8 +76,7 @@ def findContact():
                 if values['phone'].find(fn) != -1:
                     print(key, values)            
                     
-#def deleteContact():
-    
+# def deleteContact():
 
 def menuContacts(menu):
     for key, item in menu.items():
