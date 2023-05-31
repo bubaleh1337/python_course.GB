@@ -1,18 +1,5 @@
 import text
 
-"""
-1. Fork
-2. Clone
-3. git branch +
-4. view.py 
-5. Коммитить каждую функцию:
-  git add .
-  git commit -m "added main_menu"
-  git status
-  git push
-6. Create Pull request (1 раз при первом-первом коммите) (не делаешь merge)
-"""
-
 def main_menu() -> int: # 3
 	print(text.main_menu)
 	while True:
@@ -51,9 +38,6 @@ def input_index(message: str, pb: list, error: str) -> int:
 		index = input(message)
 		if index.isdigit() and 0 < int(index) < len(pb) + 1:
 			return int(index)
-				
-"""def input_search(message: str) -> str:
-	return input(message)"""
 
-def input_search(message: str) -> int:
-	return int(input(message))
+def input_search(message: str) -> str:
+	return input(message)

@@ -27,23 +27,8 @@ def start():
 								pb = model.get_pb()
 								index = view.input_index(text.input_index, pb, text.load_error)
 								contact = view.input_contact(text.input_new_contact, text.cancel_input)
-								
 								result = model.change_pb(contact, index)
 								view.print_message(text.change_successful(contact))
-
-								"""key_word = view.input_search(text.input_change)
-								result = model.search_pb(key_word)
-								if result:
-									if len(result) != 1:
-										view.print_contacts(result, '')
-										current_id = view.input_search(text.input_index)
-									else:
-										current_id = result[0].get('id')
-										new_contact = view.input_contact(text.change_contact)
-										name = model.change_pb(new_contact, current_id) # type: ignore
-										view.print_message(text.change_successful(name)) # type: ignore
-								else:
-										view.print_message(text.empty_search(key_word))"""
 						case 7: # Удалить контакт 
 								pb = model.get_pb()
 								index = view.input_index(text.index_del_contact, pb, text.load_error)

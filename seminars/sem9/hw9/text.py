@@ -37,6 +37,6 @@ change_contact = 'Введите новые данные или оставьте
 def change_successful(name: str | dict) -> str:
     return f'Контакт {name} успешно изменен!'
 
-input_search = 'Какой контакт вы хотите найти? '
+input_search = 'Какой контакт хотите найти? '
 def empty_search(word) -> str:
     return f'Контакты содержащие слово "{word}" не найдены'
