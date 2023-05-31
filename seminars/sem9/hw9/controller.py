@@ -6,27 +6,45 @@ def start():
 		while True:
 				choice = view.main_menu() # вывод меню и предоставление выбора
 				match choice:
-						case 1:
+						case 1: # Открыть файл
 								model.open_pb()
 								view.print_message(text.load_successful)
-						case 2:
+						case 2: # Записать файл
 								model.save_pb()
 								view.print_message(text.save_successful)
-						case 3:
+						case 3: # Показать контакт
 								pb = model.get_pb()
-								view.print_contact(pb, text.load_error)
-						case 4:
-								contact = view.input_contact(text.new_contact, text.cancel_input)
+								view.print_contacts(pb, text.load_error)
+						case 4: # Добавить контакт 
+								contact = view.input_contact(text.input_new_contact, text.cancel_input)
 								name = model.add_contact(contact)
 								view.print_message(text.new_contact_successful(name)) # type: ignore
-						case 5:
-								pass
-						case 6:
+						case 5: # Найти контакт
+								word = view.input_search(text.input_search)
+								result = model.search_pb(word)
+								view.print_contacts(result, text.empty_search(word))
+						case 6: # Изменить контакт
 								pb = model.get_pb()
-								index = view.input_index(text.index_change_contact, pb, text.load_error)
-								contact = view.input_contact(text.new_contact, text.cancel_input)
-								view.print_message(text.change_contact(contact))
-						case 7:
+								index = view.input_index(text.input_index, pb, text.load_error)
+								contact = view.input_contact(text.input_new_contact, text.cancel_input)
+								
+								result = model.change_pb(contact, index)
+								view.print_message(text.change_successful(contact))
+
+								"""key_word = view.input_search(text.input_change)
+								result = model.search_pb(key_word)
+								if result:
+									if len(result) != 1:
+										view.print_contacts(result, '')
+										current_id = view.input_search(text.input_index)
+									else:
+										current_id = result[0].get('id')
+										new_contact = view.input_contact(text.change_contact)
+										name = model.change_pb(new_contact, current_id) # type: ignore
+										view.print_message(text.change_successful(name)) # type: ignore
+								else:
+										view.print_message(text.empty_search(key_word))"""
+						case 7: # Удалить контакт 
 								pb = model.get_pb()
 								index = view.input_index(text.index_del_contact, pb, text.load_error)
 								name = model.del_contact(index)
