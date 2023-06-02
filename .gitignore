@@ -161,3 +161,8 @@ cython_debug/
 
 .folder/
 .vscode/
+
+.json
+*.json
+.txt
+*.txt
